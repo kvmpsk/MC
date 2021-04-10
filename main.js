@@ -8,6 +8,8 @@ const player1 = {
 	},
 };
 
+player1.attack();
+
 const player2 = {
 	name: 'Sonya',
 	hp: 100,
@@ -17,6 +19,8 @@ const player2 = {
     console.log(this.name + ' Fight...');
   },
 };
+
+player2.attack();
 
 function createPlayer(player) {
 
