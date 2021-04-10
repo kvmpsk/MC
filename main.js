@@ -1,6 +1,6 @@
 const player1 = {
 	name: 'Subzero',
-	hp: 100,
+	hp: '',
 	img: 'http://reactmarathon-api.herokuapp.com/assets/subzero.gif',
 	weapon: ['gun', 'sword'],
 	attack: function () {
@@ -12,7 +12,7 @@ player1.attack();
 
 const player2 = {
 	name: 'Sonya',
-	hp: 100,
+	hp: '',
 	img: 'http://reactmarathon-api.herokuapp.com/assets/sonya.gif',
 	weapon: ['gun', 'sword'],
 	attack: function () {
@@ -22,10 +22,10 @@ const player2 = {
 
 player2.attack();
 
-function createPlayer(player) {
+function createPlayer(player, clas) {
 
 	const $player = document.createElement('div');
-	$player.classList.add('player1');
+	$player.classList.add(clas);
 
 	const $progressbar = document.createElement('div');
 	$progressbar.classList.add('progressbar');
@@ -54,7 +54,7 @@ function createPlayer(player) {
 	$arenas.appendChild($player);
 }
 
-createPlayer(player1, 'Subzero', 50);
-createPlayer(player2, 'Sonya', 80);
+createPlayer(player1, 'player1', 'Subzero', 50);
+createPlayer(player2, 'player2', 'Sonya', 80);
 
 
