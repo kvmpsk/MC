@@ -1,5 +1,5 @@
 const player1 = {
-	name: 'Demon',
+	name: 'Subzero',
 	hp: 100,
 	img: 'http://reactmarathon-api.herokuapp.com/assets/subzero.gif',
 	weapon: ['gun', 'sword'],
@@ -9,7 +9,7 @@ const player1 = {
 };
 
 const player2 = {
-	name: "Monstr",
+	name: 'Sonya',
 	hp: 100,
 	img: 'http://reactmarathon-api.herokuapp.com/assets/sonya.gif',
 	weapon: ['gun', 'sword'],
@@ -18,38 +18,39 @@ const player2 = {
   },
 };
 
-function createPlayer(player, pers) {
+function createPlayer() {
 
 	const $player1 = document.createElement('div');
 	$player1.classList.add('player1');
 
 	const $progressbar = document.createElement('div');
-	$player1.classList.add('progressbar');
+	$progressbar.classList.add('progressbar');
 	$player1.appendChild($progressbar);
 
 	const $character = document.createElement('div');
-	$player1.classList.add('character');
+	$character.classList.add('character');
 	$player1.appendChild($character);
 
 	const $life = document.createElement('div');
 	$life.classList.add('life');
 	$life.style.width = '100%';
-	$life.style.width = pers.hp + '%';
-	$progressbar.appendChild($name);
+	$life.style.width = player1.hp + ' %';
+	$progressbar.appendChild($life);
 
 	const $name = document.createElement('div');
 	$name.classList.add('name');
-	$name.innerText = pers.name;
+	$name.innerText = player1.name;
 	$progressbar.appendChild($name);
 
 	const $img = document.createElement('img');
-	$img.src = pers.img;
+	$img.src = player1.img;
 	$character.appendChild($img);
 
-	const $arenas = document.querySelector('.$arenas');
+	const $arenas = document.querySelector('.arenas');
 	$arenas.appendChild($player1);	
+
 };
 
-createPlayer('player1', player1);
-createPlayer('player2', player2);
+createPlayer('player1', 'Subzero', 50);
+createPlayer('player2', 'Sonya', 80);
 
